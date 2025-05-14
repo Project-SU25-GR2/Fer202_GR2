@@ -2,5 +2,5 @@
 Chào mọi người tôi đây........
 
 <div align="center">
-  <a href="http://ltcuong24.io.vn/">Click vào em nè</a>
+  <a href="http://ltcuong24.io.vn/">㊝ＣＬＩＣＫムＶàＯムＥＭムđＩ모</a>
 </div>
