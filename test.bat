@@ -32,7 +32,15 @@ git pull origin %BRANCH_NAME% --rebase
 
 echo 7. Day code len GitHub
 git push -u origin %BRANCH_NAME%
+IF ERRORLEVEL 1 (
+    echo.
+    echo === LOI: Push bi tu choi vi nhanh tren GitHub da co thay doi ===
+    echo => Giai phap: Day code lai bang lenh sau (can than khi su dung):
+    echo git push -u origin %BRANCH_NAME% --force
+    echo.
+) ELSE (
+    echo --------- DA DAY CODE LEN NHANH: %BRANCH_NAME% ---------
+)
 
-echo --------- DA DAY CODE LEN NHANH: %BRANCH_NAME% ---------
 pause
 endlocal
