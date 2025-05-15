@@ -1,38 +1,38 @@
 @echo off
 setlocal ENABLEDELAYEDEXPANSION
 
-:: === CẤU HÌNH ===
+:: === CAU HINH ===
 set REPO_URL=https://github.com/Project-SU25-GR2/Fer202_GR2.git
-set /p BRANCH_NAME=Nhập tên nhánh muốn push (ví dụ: main, dev): 
-set /p COMMIT_MSG=Nhập commit message: 
+set /p BRANCH_NAME=Nhap ten nhanh muon push (vi du: main, dev): 
+set /p COMMIT_MSG=Nhap commit message: 
 
-:: === BẮT ĐẦU ===
+:: === BAT DAU ===
 echo.
-echo --------- PUSH CODE TO GITHUB (Branch: %BRANCH_NAME%) ---------
+echo --------- DAY CODE LEN GITHUB (Nhanh: %BRANCH_NAME%) ---------
 cd /d %~dp0
 
-echo 1. Khởi tạo Git (nếu chưa có)
+echo 1. Khoi tao Git (neu chua co)
 git init
 
-echo 2. Kiểm tra và set remote origin
+echo 2. Kiem tra va thiet lap remote origin
 git remote remove origin >nul 2>&1
 git remote add origin %REPO_URL%
 
-echo 3. Checkout đúng nhánh
+echo 3. Chuyen den nhanh dang lam viec
 git checkout -B %BRANCH_NAME%
 
-echo 4. Thêm file vào staging
+echo 4. Them file vao danh sach commit
 git add .
 
-echo 5. Commit với message: %COMMIT_MSG%
+echo 5. Tao commit voi noi dung: %COMMIT_MSG%
 git commit -m "%COMMIT_MSG%"
 
-echo 6. Pull trước khi push (nếu có thay đổi từ server)
+echo 6. Lay code moi nhat tu GitHub (neu co)
 git pull origin %BRANCH_NAME% --rebase
 
-echo 7. Push code lên GitHub
+echo 7. Day code len GitHub
 git push -u origin %BRANCH_NAME%
 
-echo --------- ĐÃ PUSH XONG LÊN NHÁNH: %BRANCH_NAME% ---------
+echo --------- DA DAY CODE LEN NHANH: %BRANCH_NAME% ---------
 pause
 endlocal
